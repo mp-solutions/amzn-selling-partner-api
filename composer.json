@@ -1,0 +1,35 @@
+{
+    "name": "mp-solutions/amzn-selling-partner-api",
+    "description": "PHP + openapi generator realization of amzn/selling-partner-api-models",
+    "keywords": [
+        "php",
+		"amazon",
+		"marketplace",
+        "selling-partner-api"		
+    ],
+    "homepage": "http://mpsolutions.by/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MPSolutions",
+            "homepage": "http://mpsolutions.by/"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0 || ^9.0",
+        "friendsofphp/php-cs-fixer": "^2.12"
+    },
+    "autoload": {
+        "psr-4": { "MPSolutions\\AmznSellingPartnerApi\\" : "lib/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "MPSolutions\\AmznSellingPartnerApi\\Test\\" : "test/" }
+    }
+}
