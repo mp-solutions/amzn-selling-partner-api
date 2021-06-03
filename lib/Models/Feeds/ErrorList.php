@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateFeedDocumentResponse
+ * ErrorList
  *
  * PHP version 7.2
  *
@@ -34,10 +34,10 @@ use \MPSolutions\AmznSellingPartnerApi\Models\ModelInterface;
 use \MPSolutions\AmznSellingPartnerApi\ObjectSerializer;
 
 /**
- * CreateFeedDocumentResponse Class Doc Comment
+ * ErrorList Class Doc Comment
  *
  * @category Class
- * @description Information required to upload a feed document&#39;s contents.
+ * @description A list of error responses returned when a request is unsuccessful.
  * @package  MPSolutions\AmznSellingPartnerApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -45,7 +45,7 @@ use \MPSolutions\AmznSellingPartnerApi\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CreateFeedDocumentResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class ErrorList implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -54,7 +54,7 @@ class CreateFeedDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateFeedDocumentResponse';
+    protected static $openAPIModelName = 'ErrorList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -62,8 +62,7 @@ class CreateFeedDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'feed_document_id' => 'string',
-        'url' => 'string'
+        'errors' => '\MPSolutions\AmznSellingPartnerApi\Models\Feeds\Error[]'
     ];
 
     /**
@@ -74,8 +73,7 @@ class CreateFeedDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'feed_document_id' => null,
-        'url' => null
+        'errors' => null
     ];
 
     /**
@@ -105,8 +103,7 @@ class CreateFeedDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'feed_document_id' => 'feedDocumentId',
-        'url' => 'url'
+        'errors' => 'errors'
     ];
 
     /**
@@ -115,8 +112,7 @@ class CreateFeedDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'feed_document_id' => 'setFeedDocumentId',
-        'url' => 'setUrl'
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -125,8 +121,7 @@ class CreateFeedDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'feed_document_id' => 'getFeedDocumentId',
-        'url' => 'getUrl'
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -189,8 +184,7 @@ class CreateFeedDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(array $data = null)
     {
-        $this->container['feed_document_id'] = $data['feed_document_id'] ?? null;
-        $this->container['url'] = $data['url'] ?? null;
+        $this->container['errors'] = $data['errors'] ?? null;
     }
 
     /**
@@ -202,11 +196,8 @@ class CreateFeedDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
-        if ($this->container['feed_document_id'] === null) {
-            $invalidProperties[] = "'feed_document_id' can't be null";
-        }
-        if ($this->container['url'] === null) {
-            $invalidProperties[] = "'url' can't be null";
+        if ($this->container['errors'] === null) {
+            $invalidProperties[] = "'errors' can't be null";
         }
         return $invalidProperties;
     }
@@ -224,49 +215,25 @@ class CreateFeedDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets feed_document_id
+     * Gets errors
      *
-     * @return string
+     * @return \MPSolutions\AmznSellingPartnerApi\Models\Feeds\Error[]
      */
-    public function getFeedDocumentId()
+    public function getErrors()
     {
-        return $this->container['feed_document_id'];
+        return $this->container['errors'];
     }
 
     /**
-     * Sets feed_document_id
+     * Sets errors
      *
-     * @param string $feed_document_id The identifier of the feed document.
+     * @param \MPSolutions\AmznSellingPartnerApi\Models\Feeds\Error[] $errors errors
      *
      * @return self
      */
-    public function setFeedDocumentId($feed_document_id)
+    public function setErrors($errors)
     {
-        $this->container['feed_document_id'] = $feed_document_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets url
-     *
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->container['url'];
-    }
-
-    /**
-     * Sets url
-     *
-     * @param string $url The presigned URL for uploading the feed contents. This URL expires after 5 minutes.
-     *
-     * @return self
-     */
-    public function setUrl($url)
-    {
-        $this->container['url'] = $url;
+        $this->container['errors'] = $errors;
 
         return $this;
     }

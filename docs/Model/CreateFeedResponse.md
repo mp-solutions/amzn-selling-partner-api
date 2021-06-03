@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payload** | [**\MPSolutions\AmznSellingPartnerApi\Models\Feeds\CreateFeedResult**](CreateFeedResult.md) |  | [optional]
-**errors** | [**\MPSolutions\AmznSellingPartnerApi\Models\Feeds\Error[]**](Error.md) | A list of error responses returned when a request is unsuccessful. | [optional]
+**feed_id** | **string** | The identifier for the feed. This identifier is unique only in combination with a seller ID. |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

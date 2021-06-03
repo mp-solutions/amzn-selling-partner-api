@@ -4,18 +4,18 @@ All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancelFeed()**](FeedsApi.md#cancelFeed) | **DELETE** /feeds/2020-09-04/feeds/{feedId} | 
-[**createFeed()**](FeedsApi.md#createFeed) | **POST** /feeds/2020-09-04/feeds | 
-[**createFeedDocument()**](FeedsApi.md#createFeedDocument) | **POST** /feeds/2020-09-04/documents | 
-[**getFeed()**](FeedsApi.md#getFeed) | **GET** /feeds/2020-09-04/feeds/{feedId} | 
-[**getFeedDocument()**](FeedsApi.md#getFeedDocument) | **GET** /feeds/2020-09-04/documents/{feedDocumentId} | 
-[**getFeeds()**](FeedsApi.md#getFeeds) | **GET** /feeds/2020-09-04/feeds | 
+[**cancelFeed()**](FeedsApi.md#cancelFeed) | **DELETE** /feeds/2021-06-30/feeds/{feedId} | 
+[**createFeed()**](FeedsApi.md#createFeed) | **POST** /feeds/2021-06-30/feeds | 
+[**createFeedDocument()**](FeedsApi.md#createFeedDocument) | **POST** /feeds/2021-06-30/documents | 
+[**getFeed()**](FeedsApi.md#getFeed) | **GET** /feeds/2021-06-30/feeds/{feedId} | 
+[**getFeedDocument()**](FeedsApi.md#getFeedDocument) | **GET** /feeds/2021-06-30/documents/{feedDocumentId} | 
+[**getFeeds()**](FeedsApi.md#getFeeds) | **GET** /feeds/2021-06-30/feeds | 
 
 
 ## `cancelFeed()`
 
 ```php
-cancelFeed($feed_id): \MPSolutions\AmznSellingPartnerApi\Models\Feeds\CancelFeedResponse
+cancelFeed($feed_id)
 ```
 
 
@@ -38,8 +38,7 @@ $apiInstance = new MPSolutions\AmznSellingPartnerApi\Api\FeedsApi(
 $feed_id = 'feed_id_example'; // string | The identifier for the feed. This identifier is unique only in combination with a seller ID.
 
 try {
-    $result = $apiInstance->cancelFeed($feed_id);
-    print_r($result);
+    $apiInstance->cancelFeed($feed_id);
 } catch (Exception $e) {
     echo 'Exception when calling FeedsApi->cancelFeed: ', $e->getMessage(), PHP_EOL;
 }
@@ -53,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\MPSolutions\AmznSellingPartnerApi\Models\Feeds\CancelFeedResponse**](../Model/CancelFeedResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -76,7 +75,7 @@ createFeed($body): \MPSolutions\AmznSellingPartnerApi\Models\Feeds\CreateFeedRes
 
 
 
-Creates a feed. Encrypt and upload the contents of the feed document before calling this operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Creates a feed. Upload the contents of the feed document before calling this operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -132,7 +131,7 @@ createFeedDocument($body): \MPSolutions\AmznSellingPartnerApi\Models\Feeds\Creat
 
 
 
-Creates a feed document for the feed type that you specify. This operation returns encryption details for encrypting the contents of the document, as well as a presigned URL for uploading the encrypted feed document contents. It also returns a feedDocumentId value that you can pass in with a subsequent call to the createFeed operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Creates a feed document for the feed type that you specify. This operation returns a presigned URL for uploading the feed document contents. It also returns a feedDocumentId value that you can pass in with a subsequent call to the createFeed operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -183,7 +182,7 @@ No authorization required
 ## `getFeed()`
 
 ```php
-getFeed($feed_id): \MPSolutions\AmznSellingPartnerApi\Models\Feeds\GetFeedResponse
+getFeed($feed_id): \MPSolutions\AmznSellingPartnerApi\Models\Feeds\Feed
 ```
 
 
@@ -221,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\MPSolutions\AmznSellingPartnerApi\Models\Feeds\GetFeedResponse**](../Model/GetFeedResponse.md)
+[**\MPSolutions\AmznSellingPartnerApi\Models\Feeds\Feed**](../Model/Feed.md)
 
 ### Authorization
 
@@ -239,12 +238,12 @@ No authorization required
 ## `getFeedDocument()`
 
 ```php
-getFeedDocument($feed_document_id): \MPSolutions\AmznSellingPartnerApi\Models\Feeds\GetFeedDocumentResponse
+getFeedDocument($feed_document_id): \MPSolutions\AmznSellingPartnerApi\Models\Feeds\FeedDocument
 ```
 
 
 
-Returns the information required for retrieving a feed document's contents. This includes a presigned URL for the feed document as well as the information required to decrypt the document's contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns the information required for retrieving a feed document's contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -277,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\MPSolutions\AmznSellingPartnerApi\Models\Feeds\GetFeedDocumentResponse**](../Model/GetFeedDocumentResponse.md)
+[**\MPSolutions\AmznSellingPartnerApi\Models\Feeds\FeedDocument**](../Model/FeedDocument.md)
 
 ### Authorization
 
