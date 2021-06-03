@@ -4,21 +4,21 @@ All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancelReport()**](ReportsApi.md#cancelReport) | **DELETE** /reports/2020-09-04/reports/{reportId} | 
-[**cancelReportSchedule()**](ReportsApi.md#cancelReportSchedule) | **DELETE** /reports/2020-09-04/schedules/{reportScheduleId} | 
-[**createReport()**](ReportsApi.md#createReport) | **POST** /reports/2020-09-04/reports | 
-[**createReportSchedule()**](ReportsApi.md#createReportSchedule) | **POST** /reports/2020-09-04/schedules | 
-[**getReport()**](ReportsApi.md#getReport) | **GET** /reports/2020-09-04/reports/{reportId} | 
-[**getReportDocument()**](ReportsApi.md#getReportDocument) | **GET** /reports/2020-09-04/documents/{reportDocumentId} | 
-[**getReportSchedule()**](ReportsApi.md#getReportSchedule) | **GET** /reports/2020-09-04/schedules/{reportScheduleId} | 
-[**getReportSchedules()**](ReportsApi.md#getReportSchedules) | **GET** /reports/2020-09-04/schedules | 
-[**getReports()**](ReportsApi.md#getReports) | **GET** /reports/2020-09-04/reports | 
+[**cancelReport()**](ReportsApi.md#cancelReport) | **DELETE** /reports/2021-06-30/reports/{reportId} | 
+[**cancelReportSchedule()**](ReportsApi.md#cancelReportSchedule) | **DELETE** /reports/2021-06-30/schedules/{reportScheduleId} | 
+[**createReport()**](ReportsApi.md#createReport) | **POST** /reports/2021-06-30/reports | 
+[**createReportSchedule()**](ReportsApi.md#createReportSchedule) | **POST** /reports/2021-06-30/schedules | 
+[**getReport()**](ReportsApi.md#getReport) | **GET** /reports/2021-06-30/reports/{reportId} | 
+[**getReportDocument()**](ReportsApi.md#getReportDocument) | **GET** /reports/2021-06-30/documents/{reportDocumentId} | 
+[**getReportSchedule()**](ReportsApi.md#getReportSchedule) | **GET** /reports/2021-06-30/schedules/{reportScheduleId} | 
+[**getReportSchedules()**](ReportsApi.md#getReportSchedules) | **GET** /reports/2021-06-30/schedules | 
+[**getReports()**](ReportsApi.md#getReports) | **GET** /reports/2021-06-30/reports | 
 
 
 ## `cancelReport()`
 
 ```php
-cancelReport($report_id): \MPSolutions\AmznSellingPartnerApi\Models\Reports\CancelReportResponse
+cancelReport($report_id)
 ```
 
 
@@ -41,8 +41,7 @@ $apiInstance = new MPSolutions\AmznSellingPartnerApi\Api\ReportsApi(
 $report_id = 'report_id_example'; // string | The identifier for the report. This identifier is unique only in combination with a seller ID.
 
 try {
-    $result = $apiInstance->cancelReport($report_id);
-    print_r($result);
+    $apiInstance->cancelReport($report_id);
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->cancelReport: ', $e->getMessage(), PHP_EOL;
 }
@@ -56,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\MPSolutions\AmznSellingPartnerApi\Models\Reports\CancelReportResponse**](../Model/CancelReportResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -74,7 +73,7 @@ No authorization required
 ## `cancelReportSchedule()`
 
 ```php
-cancelReportSchedule($report_schedule_id): \MPSolutions\AmznSellingPartnerApi\Models\Reports\CancelReportScheduleResponse
+cancelReportSchedule($report_schedule_id)
 ```
 
 
@@ -97,8 +96,7 @@ $apiInstance = new MPSolutions\AmznSellingPartnerApi\Api\ReportsApi(
 $report_schedule_id = 'report_schedule_id_example'; // string | The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
 
 try {
-    $result = $apiInstance->cancelReportSchedule($report_schedule_id);
-    print_r($result);
+    $apiInstance->cancelReportSchedule($report_schedule_id);
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->cancelReportSchedule: ', $e->getMessage(), PHP_EOL;
 }
@@ -112,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\MPSolutions\AmznSellingPartnerApi\Models\Reports\CancelReportScheduleResponse**](../Model/CancelReportScheduleResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -242,7 +240,7 @@ No authorization required
 ## `getReport()`
 
 ```php
-getReport($report_id): \MPSolutions\AmznSellingPartnerApi\Models\Reports\GetReportResponse
+getReport($report_id): \MPSolutions\AmznSellingPartnerApi\Models\Reports\Report
 ```
 
 
@@ -280,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\MPSolutions\AmznSellingPartnerApi\Models\Reports\GetReportResponse**](../Model/GetReportResponse.md)
+[**\MPSolutions\AmznSellingPartnerApi\Models\Reports\Report**](../Model/Report.md)
 
 ### Authorization
 
@@ -298,12 +296,12 @@ No authorization required
 ## `getReportDocument()`
 
 ```php
-getReportDocument($report_document_id): \MPSolutions\AmznSellingPartnerApi\Models\Reports\GetReportDocumentResponse
+getReportDocument($report_document_id): \MPSolutions\AmznSellingPartnerApi\Models\Reports\ReportDocument
 ```
 
 
 
-Returns the information required for retrieving a report document's contents. This includes a presigned URL for the report document as well as the information required to decrypt the document's contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns the information required for retrieving a report document's contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -336,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\MPSolutions\AmznSellingPartnerApi\Models\Reports\GetReportDocumentResponse**](../Model/GetReportDocumentResponse.md)
+[**\MPSolutions\AmznSellingPartnerApi\Models\Reports\ReportDocument**](../Model/ReportDocument.md)
 
 ### Authorization
 
@@ -354,7 +352,7 @@ No authorization required
 ## `getReportSchedule()`
 
 ```php
-getReportSchedule($report_schedule_id): \MPSolutions\AmznSellingPartnerApi\Models\Reports\GetReportScheduleResponse
+getReportSchedule($report_schedule_id): \MPSolutions\AmznSellingPartnerApi\Models\Reports\ReportSchedule
 ```
 
 
@@ -392,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\MPSolutions\AmznSellingPartnerApi\Models\Reports\GetReportScheduleResponse**](../Model/GetReportScheduleResponse.md)
+[**\MPSolutions\AmznSellingPartnerApi\Models\Reports\ReportSchedule**](../Model/ReportSchedule.md)
 
 ### Authorization
 
@@ -410,7 +408,7 @@ No authorization required
 ## `getReportSchedules()`
 
 ```php
-getReportSchedules($report_types): \MPSolutions\AmznSellingPartnerApi\Models\Reports\GetReportSchedulesResponse
+getReportSchedules($report_types): \MPSolutions\AmznSellingPartnerApi\Models\Reports\ReportScheduleList
 ```
 
 
@@ -448,7 +446,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\MPSolutions\AmznSellingPartnerApi\Models\Reports\GetReportSchedulesResponse**](../Model/GetReportSchedulesResponse.md)
+[**\MPSolutions\AmznSellingPartnerApi\Models\Reports\ReportScheduleList**](../Model/ReportScheduleList.md)
 
 ### Authorization
 

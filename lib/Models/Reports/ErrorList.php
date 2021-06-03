@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateReportScheduleResponse
+ * ErrorList
  *
  * PHP version 7.2
  *
@@ -34,9 +34,10 @@ use \MPSolutions\AmznSellingPartnerApi\Models\ModelInterface;
 use \MPSolutions\AmznSellingPartnerApi\ObjectSerializer;
 
 /**
- * CreateReportScheduleResponse Class Doc Comment
+ * ErrorList Class Doc Comment
  *
  * @category Class
+ * @description A list of error responses returned when a request is unsuccessful.
  * @package  MPSolutions\AmznSellingPartnerApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +45,7 @@ use \MPSolutions\AmznSellingPartnerApi\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class ErrorList implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +54,7 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateReportScheduleResponse';
+    protected static $openAPIModelName = 'ErrorList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,7 +62,7 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'report_schedule_id' => 'string'
+        'errors' => '\MPSolutions\AmznSellingPartnerApi\Models\Reports\Error[]'
     ];
 
     /**
@@ -72,7 +73,7 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'report_schedule_id' => null
+        'errors' => null
     ];
 
     /**
@@ -102,7 +103,7 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'report_schedule_id' => 'reportScheduleId'
+        'errors' => 'errors'
     ];
 
     /**
@@ -111,7 +112,7 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'report_schedule_id' => 'setReportScheduleId'
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -120,7 +121,7 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'report_schedule_id' => 'getReportScheduleId'
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -183,7 +184,7 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->container['report_schedule_id'] = $data['report_schedule_id'] ?? null;
+        $this->container['errors'] = $data['errors'] ?? null;
     }
 
     /**
@@ -195,8 +196,8 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['report_schedule_id'] === null) {
-            $invalidProperties[] = "'report_schedule_id' can't be null";
+        if ($this->container['errors'] === null) {
+            $invalidProperties[] = "'errors' can't be null";
         }
         return $invalidProperties;
     }
@@ -214,25 +215,25 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets report_schedule_id
+     * Gets errors
      *
-     * @return string
+     * @return \MPSolutions\AmznSellingPartnerApi\Models\Reports\Error[]
      */
-    public function getReportScheduleId()
+    public function getErrors()
     {
-        return $this->container['report_schedule_id'];
+        return $this->container['errors'];
     }
 
     /**
-     * Sets report_schedule_id
+     * Sets errors
      *
-     * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
+     * @param \MPSolutions\AmznSellingPartnerApi\Models\Reports\Error[] $errors errors
      *
      * @return self
      */
-    public function setReportScheduleId($report_schedule_id)
+    public function setErrors($errors)
     {
-        $this->container['report_schedule_id'] = $report_schedule_id;
+        $this->container['errors'] = $errors;
 
         return $this;
     }

@@ -14,7 +14,7 @@
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./lib\/Api</directory>
-            <directory suffix=".php">./lib\/Models/CatalogItems</directory>
+            <directory suffix=".php">./lib\/Models/Reports</directory>
         </whitelist>
     </filter>
     <php>

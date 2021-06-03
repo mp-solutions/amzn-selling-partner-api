@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateReportScheduleResponse
+ * ReportScheduleList
  *
  * PHP version 7.2
  *
@@ -34,7 +34,7 @@ use \MPSolutions\AmznSellingPartnerApi\Models\ModelInterface;
 use \MPSolutions\AmznSellingPartnerApi\ObjectSerializer;
 
 /**
- * CreateReportScheduleResponse Class Doc Comment
+ * ReportScheduleList Class Doc Comment
  *
  * @category Class
  * @package  MPSolutions\AmznSellingPartnerApi
@@ -44,7 +44,7 @@ use \MPSolutions\AmznSellingPartnerApi\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class ReportScheduleList implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateReportScheduleResponse';
+    protected static $openAPIModelName = 'ReportScheduleList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,7 +61,7 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'report_schedule_id' => 'string'
+        'report_schedules' => '\MPSolutions\AmznSellingPartnerApi\Models\Reports\ReportSchedule[]'
     ];
 
     /**
@@ -72,7 +72,7 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'report_schedule_id' => null
+        'report_schedules' => null
     ];
 
     /**
@@ -102,7 +102,7 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'report_schedule_id' => 'reportScheduleId'
+        'report_schedules' => 'reportSchedules'
     ];
 
     /**
@@ -111,7 +111,7 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'report_schedule_id' => 'setReportScheduleId'
+        'report_schedules' => 'setReportSchedules'
     ];
 
     /**
@@ -120,7 +120,7 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'report_schedule_id' => 'getReportScheduleId'
+        'report_schedules' => 'getReportSchedules'
     ];
 
     /**
@@ -183,7 +183,7 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->container['report_schedule_id'] = $data['report_schedule_id'] ?? null;
+        $this->container['report_schedules'] = $data['report_schedules'] ?? null;
     }
 
     /**
@@ -195,8 +195,8 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['report_schedule_id'] === null) {
-            $invalidProperties[] = "'report_schedule_id' can't be null";
+        if ($this->container['report_schedules'] === null) {
+            $invalidProperties[] = "'report_schedules' can't be null";
         }
         return $invalidProperties;
     }
@@ -214,25 +214,25 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets report_schedule_id
+     * Gets report_schedules
      *
-     * @return string
+     * @return \MPSolutions\AmznSellingPartnerApi\Models\Reports\ReportSchedule[]
      */
-    public function getReportScheduleId()
+    public function getReportSchedules()
     {
-        return $this->container['report_schedule_id'];
+        return $this->container['report_schedules'];
     }
 
     /**
-     * Sets report_schedule_id
+     * Sets report_schedules
      *
-     * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
+     * @param \MPSolutions\AmznSellingPartnerApi\Models\Reports\ReportSchedule[] $report_schedules report_schedules
      *
      * @return self
      */
-    public function setReportScheduleId($report_schedule_id)
+    public function setReportSchedules($report_schedules)
     {
-        $this->container['report_schedule_id'] = $report_schedule_id;
+        $this->container['report_schedules'] = $report_schedules;
 
         return $this;
     }
