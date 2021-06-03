@@ -1,6 +1,6 @@
 <?php
 /**
- * Error
+ * ItemSearchResults
  *
  * PHP version 7.2
  *
@@ -34,10 +34,10 @@ use \MPSolutions\AmznSellingPartnerApi\Models\ModelInterface;
 use \MPSolutions\AmznSellingPartnerApi\ObjectSerializer;
 
 /**
- * Error Class Doc Comment
+ * ItemSearchResults Class Doc Comment
  *
  * @category Class
- * @description Error response returned when the request is unsuccessful.
+ * @description Items in the Amazon catalog and search related metadata.
  * @package  MPSolutions\AmznSellingPartnerApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -45,7 +45,7 @@ use \MPSolutions\AmznSellingPartnerApi\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Error implements ModelInterface, ArrayAccess, \JsonSerializable
+class ItemSearchResults implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -54,7 +54,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Error';
+    protected static $openAPIModelName = 'ItemSearchResults';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -62,9 +62,10 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'string',
-        'message' => 'string',
-        'details' => 'string'
+        'number_of_results' => 'int',
+        'pagination' => '\MPSolutions\AmznSellingPartnerApi\Models\CatalogItems\Pagination',
+        'refinements' => '\MPSolutions\AmznSellingPartnerApi\Models\CatalogItems\Refinements',
+        'items' => '\MPSolutions\AmznSellingPartnerApi\Models\CatalogItems\Item[]'
     ];
 
     /**
@@ -75,9 +76,10 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
-        'message' => null,
-        'details' => null
+        'number_of_results' => null,
+        'pagination' => null,
+        'refinements' => null,
+        'items' => null
     ];
 
     /**
@@ -107,9 +109,10 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message',
-        'details' => 'details'
+        'number_of_results' => 'numberOfResults',
+        'pagination' => 'pagination',
+        'refinements' => 'refinements',
+        'items' => 'items'
     ];
 
     /**
@@ -118,9 +121,10 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'message' => 'setMessage',
-        'details' => 'setDetails'
+        'number_of_results' => 'setNumberOfResults',
+        'pagination' => 'setPagination',
+        'refinements' => 'setRefinements',
+        'items' => 'setItems'
     ];
 
     /**
@@ -129,9 +133,10 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage',
-        'details' => 'getDetails'
+        'number_of_results' => 'getNumberOfResults',
+        'pagination' => 'getPagination',
+        'refinements' => 'getRefinements',
+        'items' => 'getItems'
     ];
 
     /**
@@ -194,9 +199,10 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = $data['code'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
+        $this->container['number_of_results'] = $data['number_of_results'] ?? null;
+        $this->container['pagination'] = $data['pagination'] ?? null;
+        $this->container['refinements'] = $data['refinements'] ?? null;
+        $this->container['items'] = $data['items'] ?? null;
     }
 
     /**
@@ -208,11 +214,17 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
+        if ($this->container['number_of_results'] === null) {
+            $invalidProperties[] = "'number_of_results' can't be null";
         }
-        if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
+        if ($this->container['pagination'] === null) {
+            $invalidProperties[] = "'pagination' can't be null";
+        }
+        if ($this->container['refinements'] === null) {
+            $invalidProperties[] = "'refinements' can't be null";
+        }
+        if ($this->container['items'] === null) {
+            $invalidProperties[] = "'items' can't be null";
         }
         return $invalidProperties;
     }
@@ -230,73 +242,97 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets code
+     * Gets number_of_results
      *
-     * @return string
+     * @return int
      */
-    public function getCode()
+    public function getNumberOfResults()
     {
-        return $this->container['code'];
+        return $this->container['number_of_results'];
     }
 
     /**
-     * Sets code
+     * Sets number_of_results
      *
-     * @param string $code An error code that identifies the type of error that occurred.
+     * @param int $number_of_results The estimated total number of products matched by the search query (only results up to the page count limit will be returned per request regardless of the number found).  Note: The maximum number of items (ASINs) that can be returned and paged through is 1000.
      *
      * @return self
      */
-    public function setCode($code)
+    public function setNumberOfResults($number_of_results)
     {
-        $this->container['code'] = $code;
+        $this->container['number_of_results'] = $number_of_results;
 
         return $this;
     }
 
     /**
-     * Gets message
+     * Gets pagination
      *
-     * @return string
+     * @return \MPSolutions\AmznSellingPartnerApi\Models\CatalogItems\Pagination
      */
-    public function getMessage()
+    public function getPagination()
     {
-        return $this->container['message'];
+        return $this->container['pagination'];
     }
 
     /**
-     * Sets message
+     * Sets pagination
      *
-     * @param string $message A message that describes the error condition.
+     * @param \MPSolutions\AmznSellingPartnerApi\Models\CatalogItems\Pagination $pagination pagination
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setPagination($pagination)
     {
-        $this->container['message'] = $message;
+        $this->container['pagination'] = $pagination;
 
         return $this;
     }
 
     /**
-     * Gets details
+     * Gets refinements
      *
-     * @return string|null
+     * @return \MPSolutions\AmznSellingPartnerApi\Models\CatalogItems\Refinements
      */
-    public function getDetails()
+    public function getRefinements()
     {
-        return $this->container['details'];
+        return $this->container['refinements'];
     }
 
     /**
-     * Sets details
+     * Sets refinements
      *
-     * @param string|null $details Additional details that can help the caller understand or fix the issue.
+     * @param \MPSolutions\AmznSellingPartnerApi\Models\CatalogItems\Refinements $refinements refinements
      *
      * @return self
      */
-    public function setDetails($details)
+    public function setRefinements($refinements)
     {
-        $this->container['details'] = $details;
+        $this->container['refinements'] = $refinements;
+
+        return $this;
+    }
+
+    /**
+     * Gets items
+     *
+     * @return \MPSolutions\AmznSellingPartnerApi\Models\CatalogItems\Item[]
+     */
+    public function getItems()
+    {
+        return $this->container['items'];
+    }
+
+    /**
+     * Sets items
+     *
+     * @param \MPSolutions\AmznSellingPartnerApi\Models\CatalogItems\Item[] $items A list of items from the Amazon catalog.
+     *
+     * @return self
+     */
+    public function setItems($items)
+    {
+        $this->container['items'] = $items;
 
         return $this;
     }

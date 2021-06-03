@@ -1,6 +1,6 @@
 <?php
 /**
- * Error
+ * ItemSummaryByMarketplace
  *
  * PHP version 7.2
  *
@@ -34,10 +34,10 @@ use \MPSolutions\AmznSellingPartnerApi\Models\ModelInterface;
 use \MPSolutions\AmznSellingPartnerApi\ObjectSerializer;
 
 /**
- * Error Class Doc Comment
+ * ItemSummaryByMarketplace Class Doc Comment
  *
  * @category Class
- * @description Error response returned when the request is unsuccessful.
+ * @description Summary details of an Amazon catalog item for the indicated Amazon marketplace.
  * @package  MPSolutions\AmznSellingPartnerApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -45,7 +45,7 @@ use \MPSolutions\AmznSellingPartnerApi\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Error implements ModelInterface, ArrayAccess, \JsonSerializable
+class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -54,7 +54,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Error';
+    protected static $openAPIModelName = 'ItemSummaryByMarketplace';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -62,9 +62,15 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'string',
-        'message' => 'string',
-        'details' => 'string'
+        'marketplace_id' => 'string',
+        'brand_name' => 'string',
+        'browse_node' => 'string',
+        'color_name' => 'string',
+        'item_name' => 'string',
+        'manufacturer' => 'string',
+        'model_number' => 'string',
+        'size_name' => 'string',
+        'style_name' => 'string'
     ];
 
     /**
@@ -75,9 +81,15 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
-        'message' => null,
-        'details' => null
+        'marketplace_id' => null,
+        'brand_name' => null,
+        'browse_node' => null,
+        'color_name' => null,
+        'item_name' => null,
+        'manufacturer' => null,
+        'model_number' => null,
+        'size_name' => null,
+        'style_name' => null
     ];
 
     /**
@@ -107,9 +119,15 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message',
-        'details' => 'details'
+        'marketplace_id' => 'marketplaceId',
+        'brand_name' => 'brandName',
+        'browse_node' => 'browseNode',
+        'color_name' => 'colorName',
+        'item_name' => 'itemName',
+        'manufacturer' => 'manufacturer',
+        'model_number' => 'modelNumber',
+        'size_name' => 'sizeName',
+        'style_name' => 'styleName'
     ];
 
     /**
@@ -118,9 +136,15 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'message' => 'setMessage',
-        'details' => 'setDetails'
+        'marketplace_id' => 'setMarketplaceId',
+        'brand_name' => 'setBrandName',
+        'browse_node' => 'setBrowseNode',
+        'color_name' => 'setColorName',
+        'item_name' => 'setItemName',
+        'manufacturer' => 'setManufacturer',
+        'model_number' => 'setModelNumber',
+        'size_name' => 'setSizeName',
+        'style_name' => 'setStyleName'
     ];
 
     /**
@@ -129,9 +153,15 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage',
-        'details' => 'getDetails'
+        'marketplace_id' => 'getMarketplaceId',
+        'brand_name' => 'getBrandName',
+        'browse_node' => 'getBrowseNode',
+        'color_name' => 'getColorName',
+        'item_name' => 'getItemName',
+        'manufacturer' => 'getManufacturer',
+        'model_number' => 'getModelNumber',
+        'size_name' => 'getSizeName',
+        'style_name' => 'getStyleName'
     ];
 
     /**
@@ -194,9 +224,15 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = $data['code'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
+        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
+        $this->container['brand_name'] = $data['brand_name'] ?? null;
+        $this->container['browse_node'] = $data['browse_node'] ?? null;
+        $this->container['color_name'] = $data['color_name'] ?? null;
+        $this->container['item_name'] = $data['item_name'] ?? null;
+        $this->container['manufacturer'] = $data['manufacturer'] ?? null;
+        $this->container['model_number'] = $data['model_number'] ?? null;
+        $this->container['size_name'] = $data['size_name'] ?? null;
+        $this->container['style_name'] = $data['style_name'] ?? null;
     }
 
     /**
@@ -208,11 +244,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
-        }
-        if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
+        if ($this->container['marketplace_id'] === null) {
+            $invalidProperties[] = "'marketplace_id' can't be null";
         }
         return $invalidProperties;
     }
@@ -230,73 +263,217 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets code
+     * Gets marketplace_id
      *
      * @return string
      */
-    public function getCode()
+    public function getMarketplaceId()
     {
-        return $this->container['code'];
+        return $this->container['marketplace_id'];
     }
 
     /**
-     * Sets code
+     * Sets marketplace_id
      *
-     * @param string $code An error code that identifies the type of error that occurred.
+     * @param string $marketplace_id Amazon marketplace identifier.
      *
      * @return self
      */
-    public function setCode($code)
+    public function setMarketplaceId($marketplace_id)
     {
-        $this->container['code'] = $code;
+        $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
     }
 
     /**
-     * Gets message
-     *
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string $message A message that describes the error condition.
-     *
-     * @return self
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets details
+     * Gets brand_name
      *
      * @return string|null
      */
-    public function getDetails()
+    public function getBrandName()
     {
-        return $this->container['details'];
+        return $this->container['brand_name'];
     }
 
     /**
-     * Sets details
+     * Sets brand_name
      *
-     * @param string|null $details Additional details that can help the caller understand or fix the issue.
+     * @param string|null $brand_name Name of the brand associated with an Amazon catalog item.
      *
      * @return self
      */
-    public function setDetails($details)
+    public function setBrandName($brand_name)
     {
-        $this->container['details'] = $details;
+        $this->container['brand_name'] = $brand_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets browse_node
+     *
+     * @return string|null
+     */
+    public function getBrowseNode()
+    {
+        return $this->container['browse_node'];
+    }
+
+    /**
+     * Sets browse_node
+     *
+     * @param string|null $browse_node Identifier of the browse node associated with an Amazon catalog item.
+     *
+     * @return self
+     */
+    public function setBrowseNode($browse_node)
+    {
+        $this->container['browse_node'] = $browse_node;
+
+        return $this;
+    }
+
+    /**
+     * Gets color_name
+     *
+     * @return string|null
+     */
+    public function getColorName()
+    {
+        return $this->container['color_name'];
+    }
+
+    /**
+     * Sets color_name
+     *
+     * @param string|null $color_name Name of the color associated with an Amazon catalog item.
+     *
+     * @return self
+     */
+    public function setColorName($color_name)
+    {
+        $this->container['color_name'] = $color_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets item_name
+     *
+     * @return string|null
+     */
+    public function getItemName()
+    {
+        return $this->container['item_name'];
+    }
+
+    /**
+     * Sets item_name
+     *
+     * @param string|null $item_name Name, or title, associated with an Amazon catalog item.
+     *
+     * @return self
+     */
+    public function setItemName($item_name)
+    {
+        $this->container['item_name'] = $item_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets manufacturer
+     *
+     * @return string|null
+     */
+    public function getManufacturer()
+    {
+        return $this->container['manufacturer'];
+    }
+
+    /**
+     * Sets manufacturer
+     *
+     * @param string|null $manufacturer Name of the manufacturer associated with an Amazon catalog item.
+     *
+     * @return self
+     */
+    public function setManufacturer($manufacturer)
+    {
+        $this->container['manufacturer'] = $manufacturer;
+
+        return $this;
+    }
+
+    /**
+     * Gets model_number
+     *
+     * @return string|null
+     */
+    public function getModelNumber()
+    {
+        return $this->container['model_number'];
+    }
+
+    /**
+     * Sets model_number
+     *
+     * @param string|null $model_number Model number associated with an Amazon catalog item.
+     *
+     * @return self
+     */
+    public function setModelNumber($model_number)
+    {
+        $this->container['model_number'] = $model_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets size_name
+     *
+     * @return string|null
+     */
+    public function getSizeName()
+    {
+        return $this->container['size_name'];
+    }
+
+    /**
+     * Sets size_name
+     *
+     * @param string|null $size_name Name of the size associated with an Amazon catalog item.
+     *
+     * @return self
+     */
+    public function setSizeName($size_name)
+    {
+        $this->container['size_name'] = $size_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets style_name
+     *
+     * @return string|null
+     */
+    public function getStyleName()
+    {
+        return $this->container['style_name'];
+    }
+
+    /**
+     * Sets style_name
+     *
+     * @param string|null $style_name Name of the style associated with an Amazon catalog item.
+     *
+     * @return self
+     */
+    public function setStyleName($style_name)
+    {
+        $this->container['style_name'] = $style_name;
 
         return $this;
     }

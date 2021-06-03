@@ -1,6 +1,6 @@
 <?php
 /**
- * Error
+ * BrandRefinement
  *
  * PHP version 7.2
  *
@@ -34,10 +34,10 @@ use \MPSolutions\AmznSellingPartnerApi\Models\ModelInterface;
 use \MPSolutions\AmznSellingPartnerApi\ObjectSerializer;
 
 /**
- * Error Class Doc Comment
+ * BrandRefinement Class Doc Comment
  *
  * @category Class
- * @description Error response returned when the request is unsuccessful.
+ * @description Description of a brand that can be used to get more fine-grained search results.
  * @package  MPSolutions\AmznSellingPartnerApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -45,7 +45,7 @@ use \MPSolutions\AmznSellingPartnerApi\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Error implements ModelInterface, ArrayAccess, \JsonSerializable
+class BrandRefinement implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -54,7 +54,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Error';
+    protected static $openAPIModelName = 'BrandRefinement';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -62,9 +62,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'string',
-        'message' => 'string',
-        'details' => 'string'
+        'number_of_results' => 'int',
+        'brand_name' => 'string'
     ];
 
     /**
@@ -75,9 +74,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
-        'message' => null,
-        'details' => null
+        'number_of_results' => null,
+        'brand_name' => null
     ];
 
     /**
@@ -107,9 +105,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message',
-        'details' => 'details'
+        'number_of_results' => 'numberOfResults',
+        'brand_name' => 'brandName'
     ];
 
     /**
@@ -118,9 +115,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'message' => 'setMessage',
-        'details' => 'setDetails'
+        'number_of_results' => 'setNumberOfResults',
+        'brand_name' => 'setBrandName'
     ];
 
     /**
@@ -129,9 +125,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage',
-        'details' => 'getDetails'
+        'number_of_results' => 'getNumberOfResults',
+        'brand_name' => 'getBrandName'
     ];
 
     /**
@@ -194,9 +189,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = $data['code'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
+        $this->container['number_of_results'] = $data['number_of_results'] ?? null;
+        $this->container['brand_name'] = $data['brand_name'] ?? null;
     }
 
     /**
@@ -208,11 +202,11 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
+        if ($this->container['number_of_results'] === null) {
+            $invalidProperties[] = "'number_of_results' can't be null";
         }
-        if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
+        if ($this->container['brand_name'] === null) {
+            $invalidProperties[] = "'brand_name' can't be null";
         }
         return $invalidProperties;
     }
@@ -230,73 +224,49 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets code
+     * Gets number_of_results
      *
-     * @return string
+     * @return int
      */
-    public function getCode()
+    public function getNumberOfResults()
     {
-        return $this->container['code'];
+        return $this->container['number_of_results'];
     }
 
     /**
-     * Sets code
+     * Sets number_of_results
      *
-     * @param string $code An error code that identifies the type of error that occurred.
+     * @param int $number_of_results The estimated number of results that would still be returned if refinement key applied.
      *
      * @return self
      */
-    public function setCode($code)
+    public function setNumberOfResults($number_of_results)
     {
-        $this->container['code'] = $code;
+        $this->container['number_of_results'] = $number_of_results;
 
         return $this;
     }
 
     /**
-     * Gets message
+     * Gets brand_name
      *
      * @return string
      */
-    public function getMessage()
+    public function getBrandName()
     {
-        return $this->container['message'];
+        return $this->container['brand_name'];
     }
 
     /**
-     * Sets message
+     * Sets brand_name
      *
-     * @param string $message A message that describes the error condition.
+     * @param string $brand_name Brand name. For display and can be used as a search refinement.
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setBrandName($brand_name)
     {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets details
-     *
-     * @return string|null
-     */
-    public function getDetails()
-    {
-        return $this->container['details'];
-    }
-
-    /**
-     * Sets details
-     *
-     * @param string|null $details Additional details that can help the caller understand or fix the issue.
-     *
-     * @return self
-     */
-    public function setDetails($details)
-    {
-        $this->container['details'] = $details;
+        $this->container['brand_name'] = $brand_name;
 
         return $this;
     }
