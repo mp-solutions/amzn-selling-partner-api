@@ -37,6 +37,8 @@ trait ConfigurationTrait
     protected $roleArn;
     /** @var string|null */
     protected $service;
+    /** @var string|null */
+    protected $authorizationCode;
 
     public function getRefreshToken(): ?string
     {
@@ -135,6 +137,16 @@ trait ConfigurationTrait
     public function setServiceDefault(): void
     {
         $this->service = 'execute-api';
+    }
+
+    public function getAuthorizationCode(): ?string
+    {
+        return $this->authorizationCode;
+    }
+
+    public function setAuthorizationCode(?string $authorizationCode): void
+    {
+        $this->authorizationCode = $authorizationCode;
     }
 
 }

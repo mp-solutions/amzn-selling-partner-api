@@ -78,13 +78,21 @@ class AuthorizationOauthApi
         if ('' != $regionCode) {
             $this->setRegionByRegionCode($regionCode);
         }
-        if ('' == $this->config->getRegion()
-            || '' == $this->config->getHost()) {
-            throw new \Exception('Configuration region and host must be set.');
-        }
 
-        $this->setAccessTokenFromRefreshToken();
-        $this->setSecurityToken($sessionDurationSeconds);
+        if (empty($this->config->getRefreshToken())
+            && !empty($this->config->getAuthorizationCode())
+        ) {
+            $this->exchangeAuthorizationCodeForRefreshToken();
+        } else {
+
+            if ('' == $this->config->getRegion()
+                || '' == $this->config->getHost()) {
+                throw new \Exception('Configuration region and host must be set.');
+            }
+
+            $this->setAccessTokenFromRefreshToken();
+            $this->setSecurityToken($sessionDurationSeconds);
+        }
     }
 
     /**
@@ -138,6 +146,43 @@ class AuthorizationOauthApi
             $this->config->setAccessToken($bodyDecoded['access_token']);
         } catch (\Exception $e) {
             \Yii::error("Error on getting access token: {$e->getMessage()}");
+            throw $e;
+        }
+    }
+
+    /**
+     * Get Refresh Token from amazon
+     * by authorization Code
+     * @throws \Exception
+     */
+    public function exchangeAuthorizationCodeForRefreshToken(): void
+    {
+        $formParams = [
+            'grant_type' => 'authorization_code',
+            'code' => $this->config->getAuthorizationCode(),
+            'client_id' => $this->config->getClientId(),
+            'client_secret' => $this->config->getClientSecret(),
+            //'redirect_uri' => '',
+        ];
+
+        $options = array_merge([
+            RequestOptions::HEADERS => ['Accept' => 'application/x-www-form-urlencoded'],
+            RequestOptions::HTTP_ERRORS => false,
+            'curl' => [
+                CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1_2,
+            ],
+        ], $formParams ? [RequestOptions::FORM_PARAMS => $formParams] : []);
+
+        try {
+            $response = $this->client->request('POST', 'https://api.amazon.com/auth/o2/token', $options);
+
+            $body = $response->getBody()->getContents();
+            $bodyDecoded = json_decode($body, true);
+
+            $this->config->setAccessToken($bodyDecoded['access_token']);
+            $this->config->setRefreshToken($bodyDecoded['refresh_token']);
+        } catch (\Exception $e) {
+            \Yii::error("Error on getting access and refresh token: {$e->getMessage()}");
             throw $e;
         }
     }
