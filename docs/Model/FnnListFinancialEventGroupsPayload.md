@@ -1,0 +1,10 @@
+# # FnnListFinancialEventGroupsPayload
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**next_token** | **string** | When present and not empty, pass this string token in the next request to return the next response page. | [optional]
+**financial_event_group_list** | [**\MPSolutions\AmznSellingPartnerApi\Models\Finances\FnnFinancialEventGroup[]**](FnnFinancialEventGroup.md) | A list of financial event group information. | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

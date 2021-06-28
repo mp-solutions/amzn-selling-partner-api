@@ -1,0 +1,12 @@
+# # SlcGetSolicitationActionResponse
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**_links** | [**\MPSolutions\AmznSellingPartnerApi\Models\Solicitations\SlcGetSolicitationActionResponseLinks**](SlcGetSolicitationActionResponseLinks.md) |  | [optional]
+**_embedded** | [**\MPSolutions\AmznSellingPartnerApi\Models\Solicitations\SlcGetSolicitationActionResponseEmbedded**](SlcGetSolicitationActionResponseEmbedded.md) |  | [optional]
+**payload** | [**\MPSolutions\AmznSellingPartnerApi\Models\Solicitations\SlcSolicitationsAction**](SlcSolicitationsAction.md) |  | [optional]
+**errors** | [**\MPSolutions\AmznSellingPartnerApi\Models\Solicitations\SlcError[]**](SlcError.md) | A list of error responses returned when a request is unsuccessful. | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

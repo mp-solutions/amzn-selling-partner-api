@@ -1,0 +1,10 @@
+# # MFfLabelFormatOption
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**include_packing_slip_with_label** | **bool** | When true, include a packing slip with the label. | [optional]
+**label_format** | [**\MPSolutions\AmznSellingPartnerApi\Models\MerchantFulfillment\MFfLabelFormat**](MFfLabelFormat.md) |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
