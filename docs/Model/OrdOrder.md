@@ -40,5 +40,9 @@ Name | Type | Description | Notes
 **default_ship_from_location_address** | [**\MPSolutions\AmznSellingPartnerApi\Models\Orders\OrdAddress**](OrdAddress.md) |  | [optional]
 **fulfillment_instruction** | [**\MPSolutions\AmznSellingPartnerApi\Models\Orders\OrdFulfillmentInstruction**](OrdFulfillmentInstruction.md) |  | [optional]
 **is_ispu** | **bool** | When true, this order is marked to be picked up from a store rather than delivered. | [optional]
+**marketplace_tax_info** | [**\MPSolutions\AmznSellingPartnerApi\Models\Orders\OrdMarketplaceTaxInfo**](OrdMarketplaceTaxInfo.md) |  | [optional]
+**seller_display_name** | **string** | The seller’s friendly name registered in the marketplace. | [optional]
+**shipping_address** | [**\MPSolutions\AmznSellingPartnerApi\Models\Orders\OrdAddress**](OrdAddress.md) |  | [optional]
+**buyer_info** | [**\MPSolutions\AmznSellingPartnerApi\Models\Orders\OrdBuyerInfo**](OrdBuyerInfo.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

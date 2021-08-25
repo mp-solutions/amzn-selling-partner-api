@@ -12,7 +12,7 @@
 /**
  * Selling Partner API for Catalog Items
  *
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.
+ * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, see the [Catalog Items API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/catalog-items-api-use-case-guide/catalog-items-api-use-case-guide_2020-12-01.md).
  *
  * The version of the OpenAPI document: 2020-12-01
  * 
@@ -559,8 +559,9 @@ class CIt20201201CatalogApi
             $headers
         );
 
+        ksort($queryParams);
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
-		$method = 'GET';
+        $method = 'GET';
         return new Request(
             $method,
             $resourcePath,
@@ -1081,8 +1082,9 @@ class CIt20201201CatalogApi
             $headers
         );
 
+        ksort($queryParams);
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
-		$method = 'GET';
+        $method = 'GET';
         return new Request(
             $method,
             $resourcePath,

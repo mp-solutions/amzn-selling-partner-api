@@ -64,7 +64,7 @@ class PrPDetailedShippingTimeType implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPITypes = [
         'minimum_hours' => 'int',
         'maximum_hours' => 'int',
-        'available_date' => 'float',
+        'available_date' => 'string',
         'availability_type' => 'string'
     ];
 
@@ -306,7 +306,7 @@ class PrPDetailedShippingTimeType implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets available_date
      *
-     * @return float|null
+     * @return string|null
      */
     public function getAvailableDate()
     {
@@ -316,7 +316,7 @@ class PrPDetailedShippingTimeType implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets available_date
      *
-     * @param float|null $available_date The date when the item will be available for shipping. Only displayed for items that are not currently available for shipping.
+     * @param string|null $available_date The date when the item will be available for shipping. Only displayed for items that are not currently available for shipping.
      *
      * @return self
      */

@@ -12,7 +12,7 @@
 /**
  * Selling Partner API for Listings Items
  *
- * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.
+ * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listing Items API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/listings-items-api-use-case-guide/listings-items-api-use-case-guide_2020-09-01.md).
  *
  * The version of the OpenAPI document: 2020-09-01
  * 
@@ -546,8 +546,9 @@ class LitListingsApi
             $headers
         );
 
+        ksort($queryParams);
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
-		$method = 'DELETE';
+        $method = 'DELETE';
         return new Request(
             $method,
             $resourcePath,
@@ -1005,8 +1006,9 @@ class LitListingsApi
             $headers
         );
 
+        ksort($queryParams);
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
-		$method = 'PATCH';
+        $method = 'PATCH';
         return new Request(
             $method,
             $resourcePath,
@@ -1464,8 +1466,9 @@ class LitListingsApi
             $headers
         );
 
+        ksort($queryParams);
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
-		$method = 'PUT';
+        $method = 'PUT';
         return new Request(
             $method,
             $resourcePath,

@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Tokens
  *
- * The Selling Partner API for Tokens provides a secure way to access a customers's PII (Personally Identifiable Information). You can call the Tokens API to get a Restricted Data Token (RDT) for one or more restricted resources that you specify. The RDT authorizes you to make subsequent requests to access these restricted resources.
+ * The Selling Partner API for Tokens provides a secure way to access a customer's PII (Personally Identifiable Information). You can call the Tokens API to get a Restricted Data Token (RDT) for one or more restricted resources that you specify. The RDT authorizes you to make subsequent calls to restricted operations that correspond to the restricted resources that you specified.  For more information, see the [Tokens API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/references/tokens-api/tokens_2021-03-01.md).
  *
  * The version of the OpenAPI document: 2021-03-01
  * 
@@ -62,6 +62,7 @@ class TknCreateRestrictedDataTokenRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
+        'target_application' => 'string',
         'restricted_resources' => '\MPSolutions\AmznSellingPartnerApi\Models\Tokens\TknRestrictedResource[]'
     ];
 
@@ -73,6 +74,7 @@ class TknCreateRestrictedDataTokenRequest implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'target_application' => null,
         'restricted_resources' => null
     ];
 
@@ -103,6 +105,7 @@ class TknCreateRestrictedDataTokenRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'target_application' => 'targetApplication',
         'restricted_resources' => 'restrictedResources'
     ];
 
@@ -112,6 +115,7 @@ class TknCreateRestrictedDataTokenRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'target_application' => 'setTargetApplication',
         'restricted_resources' => 'setRestrictedResources'
     ];
 
@@ -121,6 +125,7 @@ class TknCreateRestrictedDataTokenRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'target_application' => 'getTargetApplication',
         'restricted_resources' => 'getRestrictedResources'
     ];
 
@@ -184,6 +189,7 @@ class TknCreateRestrictedDataTokenRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['target_application'] = $data['target_application'] ?? null;
         $this->container['restricted_resources'] = $data['restricted_resources'] ?? null;
     }
 
@@ -213,6 +219,30 @@ class TknCreateRestrictedDataTokenRequest implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets target_application
+     *
+     * @return string|null
+     */
+    public function getTargetApplication()
+    {
+        return $this->container['target_application'];
+    }
+
+    /**
+     * Sets target_application
+     *
+     * @param string|null $target_application The application ID for the target application to which access is being delegated.
+     *
+     * @return self
+     */
+    public function setTargetApplication($target_application)
+    {
+        $this->container['target_application'] = $target_application;
+
+        return $this;
+    }
 
     /**
      * Gets restricted_resources

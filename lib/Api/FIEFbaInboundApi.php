@@ -530,8 +530,9 @@ class FIEFbaInboundApi
             $headers
         );
 
+        ksort($queryParams);
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
-		$method = 'GET';
+        $method = 'GET';
         return new Request(
             $method,
             $resourcePath,

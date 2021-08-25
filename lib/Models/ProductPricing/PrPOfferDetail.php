@@ -65,6 +65,8 @@ class PrPOfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'my_offer' => 'bool',
         'offer_type' => '\MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPOfferCustomerType',
         'sub_condition' => 'string',
+        'seller_id' => 'string',
+        'condition_notes' => 'string',
         'seller_feedback_rating' => '\MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPSellerFeedbackType',
         'shipping_time' => '\MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPDetailedShippingTimeType',
         'listing_price' => '\MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPMoneyType',
@@ -73,6 +75,7 @@ class PrPOfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipping' => '\MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPMoneyType',
         'ships_from' => '\MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPShipsFromType',
         'is_fulfilled_by_amazon' => 'bool',
+        'prime_information' => '\MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPPrimeInformationType',
         'is_buy_box_winner' => 'bool',
         'is_featured_merchant' => 'bool'
     ];
@@ -89,6 +92,8 @@ class PrPOfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'my_offer' => null,
         'offer_type' => null,
         'sub_condition' => null,
+        'seller_id' => null,
+        'condition_notes' => null,
         'seller_feedback_rating' => null,
         'shipping_time' => null,
         'listing_price' => null,
@@ -97,6 +102,7 @@ class PrPOfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipping' => null,
         'ships_from' => null,
         'is_fulfilled_by_amazon' => null,
+        'prime_information' => null,
         'is_buy_box_winner' => null,
         'is_featured_merchant' => null
     ];
@@ -132,6 +138,8 @@ class PrPOfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'my_offer' => 'MyOffer',
         'offer_type' => 'offerType',
         'sub_condition' => 'SubCondition',
+        'seller_id' => 'SellerId',
+        'condition_notes' => 'ConditionNotes',
         'seller_feedback_rating' => 'SellerFeedbackRating',
         'shipping_time' => 'ShippingTime',
         'listing_price' => 'ListingPrice',
@@ -140,6 +148,7 @@ class PrPOfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipping' => 'Shipping',
         'ships_from' => 'ShipsFrom',
         'is_fulfilled_by_amazon' => 'IsFulfilledByAmazon',
+        'prime_information' => 'PrimeInformation',
         'is_buy_box_winner' => 'IsBuyBoxWinner',
         'is_featured_merchant' => 'IsFeaturedMerchant'
     ];
@@ -154,6 +163,8 @@ class PrPOfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'my_offer' => 'setMyOffer',
         'offer_type' => 'setOfferType',
         'sub_condition' => 'setSubCondition',
+        'seller_id' => 'setSellerId',
+        'condition_notes' => 'setConditionNotes',
         'seller_feedback_rating' => 'setSellerFeedbackRating',
         'shipping_time' => 'setShippingTime',
         'listing_price' => 'setListingPrice',
@@ -162,6 +173,7 @@ class PrPOfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipping' => 'setShipping',
         'ships_from' => 'setShipsFrom',
         'is_fulfilled_by_amazon' => 'setIsFulfilledByAmazon',
+        'prime_information' => 'setPrimeInformation',
         'is_buy_box_winner' => 'setIsBuyBoxWinner',
         'is_featured_merchant' => 'setIsFeaturedMerchant'
     ];
@@ -176,6 +188,8 @@ class PrPOfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'my_offer' => 'getMyOffer',
         'offer_type' => 'getOfferType',
         'sub_condition' => 'getSubCondition',
+        'seller_id' => 'getSellerId',
+        'condition_notes' => 'getConditionNotes',
         'seller_feedback_rating' => 'getSellerFeedbackRating',
         'shipping_time' => 'getShippingTime',
         'listing_price' => 'getListingPrice',
@@ -184,6 +198,7 @@ class PrPOfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipping' => 'getShipping',
         'ships_from' => 'getShipsFrom',
         'is_fulfilled_by_amazon' => 'getIsFulfilledByAmazon',
+        'prime_information' => 'getPrimeInformation',
         'is_buy_box_winner' => 'getIsBuyBoxWinner',
         'is_featured_merchant' => 'getIsFeaturedMerchant'
     ];
@@ -252,6 +267,8 @@ class PrPOfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['my_offer'] = $data['my_offer'] ?? null;
         $this->container['offer_type'] = $data['offer_type'] ?? null;
         $this->container['sub_condition'] = $data['sub_condition'] ?? null;
+        $this->container['seller_id'] = $data['seller_id'] ?? null;
+        $this->container['condition_notes'] = $data['condition_notes'] ?? null;
         $this->container['seller_feedback_rating'] = $data['seller_feedback_rating'] ?? null;
         $this->container['shipping_time'] = $data['shipping_time'] ?? null;
         $this->container['listing_price'] = $data['listing_price'] ?? null;
@@ -260,6 +277,7 @@ class PrPOfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['shipping'] = $data['shipping'] ?? null;
         $this->container['ships_from'] = $data['ships_from'] ?? null;
         $this->container['is_fulfilled_by_amazon'] = $data['is_fulfilled_by_amazon'] ?? null;
+        $this->container['prime_information'] = $data['prime_information'] ?? null;
         $this->container['is_buy_box_winner'] = $data['is_buy_box_winner'] ?? null;
         $this->container['is_featured_merchant'] = $data['is_featured_merchant'] ?? null;
     }
@@ -395,6 +413,54 @@ class PrPOfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSubCondition($sub_condition)
     {
         $this->container['sub_condition'] = $sub_condition;
+
+        return $this;
+    }
+
+    /**
+     * Gets seller_id
+     *
+     * @return string|null
+     */
+    public function getSellerId()
+    {
+        return $this->container['seller_id'];
+    }
+
+    /**
+     * Sets seller_id
+     *
+     * @param string|null $seller_id The seller identifier for the offer.
+     *
+     * @return self
+     */
+    public function setSellerId($seller_id)
+    {
+        $this->container['seller_id'] = $seller_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets condition_notes
+     *
+     * @return string|null
+     */
+    public function getConditionNotes()
+    {
+        return $this->container['condition_notes'];
+    }
+
+    /**
+     * Sets condition_notes
+     *
+     * @param string|null $condition_notes Information about the condition of the item.
+     *
+     * @return self
+     */
+    public function setConditionNotes($condition_notes)
+    {
+        $this->container['condition_notes'] = $condition_notes;
 
         return $this;
     }
@@ -587,6 +653,30 @@ class PrPOfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIsFulfilledByAmazon($is_fulfilled_by_amazon)
     {
         $this->container['is_fulfilled_by_amazon'] = $is_fulfilled_by_amazon;
+
+        return $this;
+    }
+
+    /**
+     * Gets prime_information
+     *
+     * @return \MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPPrimeInformationType|null
+     */
+    public function getPrimeInformation()
+    {
+        return $this->container['prime_information'];
+    }
+
+    /**
+     * Sets prime_information
+     *
+     * @param \MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPPrimeInformationType|null $prime_information prime_information
+     *
+     * @return self
+     */
+    public function setPrimeInformation($prime_information)
+    {
+        $this->container['prime_information'] = $prime_information;
 
         return $this;
     }

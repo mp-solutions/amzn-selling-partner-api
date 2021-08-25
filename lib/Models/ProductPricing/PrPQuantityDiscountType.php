@@ -44,7 +44,7 @@ class PrPQuantityDiscountType
     /**
      * Possible values of this enum
      */
-    const QUANTITY_DISCOUNT = 'QuantityDiscount';
+    const QUANTITY_DISCOUNT = 'QUANTITY_DISCOUNT';
     
     /**
      * Gets allowable values of the enum

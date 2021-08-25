@@ -66,7 +66,7 @@ class FSLFeePreview implements ModelInterface, ArrayAccess, \JsonSerializable
         'price' => '\MPSolutions\AmznSellingPartnerApi\Models\FbaSmallAndLight\FSLMoneyType',
         'fee_breakdown' => '\MPSolutions\AmznSellingPartnerApi\Models\FbaSmallAndLight\FSLFeeLineItem[]',
         'total_fees' => '\MPSolutions\AmznSellingPartnerApi\Models\FbaSmallAndLight\FSLMoneyType',
-        'errors' => '\MPSolutions\AmznSellingPartnerApi\Models\FbaSmallAndLight\FSLErrorList'
+        'errors' => '\MPSolutions\AmznSellingPartnerApi\Models\FbaSmallAndLight\FSLError[]'
     ];
 
     /**
@@ -334,7 +334,7 @@ class FSLFeePreview implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets errors
      *
-     * @return \MPSolutions\AmznSellingPartnerApi\Models\FbaSmallAndLight\FSLErrorList|null
+     * @return \MPSolutions\AmznSellingPartnerApi\Models\FbaSmallAndLight\FSLError[]|null
      */
     public function getErrors()
     {
@@ -344,7 +344,7 @@ class FSLFeePreview implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets errors
      *
-     * @param \MPSolutions\AmznSellingPartnerApi\Models\FbaSmallAndLight\FSLErrorList|null $errors errors
+     * @param \MPSolutions\AmznSellingPartnerApi\Models\FbaSmallAndLight\FSLError[]|null $errors One or more unexpected errors occurred during the getSmallAndLightFeePreview operation.
      *
      * @return self
      */

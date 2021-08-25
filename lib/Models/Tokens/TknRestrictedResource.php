@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Tokens
  *
- * The Selling Partner API for Tokens provides a secure way to access a customers's PII (Personally Identifiable Information). You can call the Tokens API to get a Restricted Data Token (RDT) for one or more restricted resources that you specify. The RDT authorizes you to make subsequent requests to access these restricted resources.
+ * The Selling Partner API for Tokens provides a secure way to access a customer's PII (Personally Identifiable Information). You can call the Tokens API to get a Restricted Data Token (RDT) for one or more restricted resources that you specify. The RDT authorizes you to make subsequent calls to restricted operations that correspond to the restricted resources that you specified.  For more information, see the [Tokens API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/references/tokens-api/tokens_2021-03-01.md).
  *
  * The version of the OpenAPI document: 2021-03-01
  * 
@@ -63,7 +63,8 @@ class TknRestrictedResource implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'method' => 'string',
-        'path' => 'string'
+        'path' => 'string',
+        'data_elements' => 'string[]'
     ];
 
     /**
@@ -75,7 +76,8 @@ class TknRestrictedResource implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPIFormats = [
         'method' => null,
-        'path' => null
+        'path' => null,
+        'data_elements' => null
     ];
 
     /**
@@ -106,7 +108,8 @@ class TknRestrictedResource implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $attributeMap = [
         'method' => 'method',
-        'path' => 'path'
+        'path' => 'path',
+        'data_elements' => 'dataElements'
     ];
 
     /**
@@ -116,7 +119,8 @@ class TknRestrictedResource implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $setters = [
         'method' => 'setMethod',
-        'path' => 'setPath'
+        'path' => 'setPath',
+        'data_elements' => 'setDataElements'
     ];
 
     /**
@@ -126,7 +130,8 @@ class TknRestrictedResource implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $getters = [
         'method' => 'getMethod',
-        'path' => 'getPath'
+        'path' => 'getPath',
+        'data_elements' => 'getDataElements'
     ];
 
     /**
@@ -210,6 +215,7 @@ class TknRestrictedResource implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $this->container['method'] = $data['method'] ?? null;
         $this->container['path'] = $data['path'] ?? null;
+        $this->container['data_elements'] = $data['data_elements'] ?? null;
     }
 
     /**
@@ -264,7 +270,7 @@ class TknRestrictedResource implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets method
      *
-     * @param string $method The HTTP method used with the restricted resource.
+     * @param string $method The HTTP method in the restricted resource.
      *
      * @return self
      */
@@ -298,13 +304,37 @@ class TknRestrictedResource implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets path
      *
-     * @param string $path The path from a restricted operation. This could be:  - A specific path containing a seller's order ID, for example ```/orders/v0/orders/902-3159896-1390916/address```.  - A generic path that does not contain a seller's order ID, for example```/orders/v0/orders/{orderId}/address```).
+     * @param string $path The path in the restricted resource. Here are some path examples: - ```/orders/v0/orders```. For getting an RDT for the getOrders operation of the Orders API. For bulk orders. - ```/orders/v0/orders/123-1234567-1234567```. For getting an RDT for the getOrder operation of the Orders API. For a specific order. - ```/orders/v0/orders/123-1234567-1234567/orderItems```. For getting an RDT for the getOrderItems operation of the Orders API. For the order items in a specific order. - ```/mfn/v0/shipments/FBA1234ABC5D```. For getting an RDT for the getShipment operation of the Shipping API. For a specific shipment. - ```/mfn/v0/shipments/{shipmentId}```. For getting an RDT for the getShipment operation of the Shipping API. For any of a selling partner's shipments that you specify when you call the getShipment operation.
      *
      * @return self
      */
     public function setPath($path)
     {
         $this->container['path'] = $path;
+
+        return $this;
+    }
+
+    /**
+     * Gets data_elements
+     *
+     * @return string[]|null
+     */
+    public function getDataElements()
+    {
+        return $this->container['data_elements'];
+    }
+
+    /**
+     * Sets data_elements
+     *
+     * @param string[]|null $data_elements Indicates the type of Personally Identifiable Information requested. This parameter is required only when getting an RDT for use with the getOrder, getOrders, or getOrderItems operation of the Orders API. For more information, see the [Tokens API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/references/tokens-api/tokens_2021-03-01.md). Possible values include: - **buyerInfo**. On the order level this includes general identifying information about the buyer and tax-related information. On the order item level this includes gift wrap information and custom order information, if available. - **shippingAddress**. This includes information for fulfilling orders.
+     *
+     * @return self
+     */
+    public function setDataElements($data_elements)
+    {
+        $this->container['data_elements'] = $data_elements;
 
         return $this;
     }

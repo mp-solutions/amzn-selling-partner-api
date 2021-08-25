@@ -93,7 +93,8 @@ class OrdOrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_transparency' => 'bool',
         'ioss_number' => 'string',
         'store_chain_store_id' => 'string',
-        'deemed_reseller_category' => 'string'
+        'deemed_reseller_category' => 'string',
+        'buyer_info' => '\MPSolutions\AmznSellingPartnerApi\Models\Orders\OrdItemBuyerInfo'
     ];
 
     /**
@@ -135,7 +136,8 @@ class OrdOrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_transparency' => null,
         'ioss_number' => null,
         'store_chain_store_id' => null,
-        'deemed_reseller_category' => null
+        'deemed_reseller_category' => null,
+        'buyer_info' => null
     ];
 
     /**
@@ -196,7 +198,8 @@ class OrdOrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_transparency' => 'IsTransparency',
         'ioss_number' => 'IossNumber',
         'store_chain_store_id' => 'StoreChainStoreId',
-        'deemed_reseller_category' => 'DeemedResellerCategory'
+        'deemed_reseller_category' => 'DeemedResellerCategory',
+        'buyer_info' => 'BuyerInfo'
     ];
 
     /**
@@ -236,7 +239,8 @@ class OrdOrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_transparency' => 'setIsTransparency',
         'ioss_number' => 'setIossNumber',
         'store_chain_store_id' => 'setStoreChainStoreId',
-        'deemed_reseller_category' => 'setDeemedResellerCategory'
+        'deemed_reseller_category' => 'setDeemedResellerCategory',
+        'buyer_info' => 'setBuyerInfo'
     ];
 
     /**
@@ -276,7 +280,8 @@ class OrdOrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_transparency' => 'getIsTransparency',
         'ioss_number' => 'getIossNumber',
         'store_chain_store_id' => 'getStoreChainStoreId',
-        'deemed_reseller_category' => 'getDeemedResellerCategory'
+        'deemed_reseller_category' => 'getDeemedResellerCategory',
+        'buyer_info' => 'getBuyerInfo'
     ];
 
     /**
@@ -386,6 +391,7 @@ class OrdOrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['ioss_number'] = $data['ioss_number'] ?? null;
         $this->container['store_chain_store_id'] = $data['store_chain_store_id'] ?? null;
         $this->container['deemed_reseller_category'] = $data['deemed_reseller_category'] ?? null;
+        $this->container['buyer_info'] = $data['buyer_info'] ?? null;
     }
 
     /**
@@ -1139,7 +1145,7 @@ class OrdOrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ioss_number
      *
-     * @param string|null $ioss_number The IOSS number of the seller. Sellers selling in the EU will be assigned a unique IOSS number that must be listed on all packages sent to the EU.
+     * @param string|null $ioss_number The IOSS number for the marketplace. Sellers shipping to the European Union (EU) from outside of the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.
      *
      * @return self
      */
@@ -1204,6 +1210,30 @@ class OrdOrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['deemed_reseller_category'] = $deemed_reseller_category;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer_info
+     *
+     * @return \MPSolutions\AmznSellingPartnerApi\Models\Orders\OrdItemBuyerInfo|null
+     */
+    public function getBuyerInfo()
+    {
+        return $this->container['buyer_info'];
+    }
+
+    /**
+     * Sets buyer_info
+     *
+     * @param \MPSolutions\AmznSellingPartnerApi\Models\Orders\OrdItemBuyerInfo|null $buyer_info buyer_info
+     *
+     * @return self
+     */
+    public function setBuyerInfo($buyer_info)
+    {
+        $this->container['buyer_info'] = $buyer_info;
 
         return $this;
     }

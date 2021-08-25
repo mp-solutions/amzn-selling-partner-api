@@ -515,8 +515,9 @@ class VDPVendorInvoiceApi
             $headers
         );
 
+        ksort($queryParams);
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
-		$method = 'POST';
+        $method = 'POST';
         return new Request(
             $method,
             $resourcePath,
