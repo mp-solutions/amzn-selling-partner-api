@@ -51,7 +51,14 @@ class FfIPrepInstruction
     const BLACK_SHRINK_WRAPPING = 'BlackShrinkWrapping';
     const LABELING = 'Labeling';
     const HANG_GARMENT = 'HangGarment';
-    
+
+    /**
+     * if `true` - throws error on deserialization,
+     * when enum value is not allowed. Default behavior like `true`
+     * if `false` - skips error for unexpected value
+     */
+    const STRICT_DESERIALIZATION = false;
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -66,6 +73,15 @@ class FfIPrepInstruction
             self::LABELING,
             self::HANG_GARMENT,
         ];
+    }
+
+    /**
+     * Gets strict|soft mode for deserialization
+     * @return bool
+     */
+    public static function skipOnDeserialization()
+    {
+        return !self::STRICT_DESERIALIZATION;
     }
 }
 
