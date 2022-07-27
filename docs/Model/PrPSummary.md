@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **suggested_lower_price_plus_shipping** | [**\MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPMoneyType**](PrPMoneyType.md) |  | [optional]
 **sales_rankings** | [**\MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPSalesRankType[]**](PrPSalesRankType.md) | A list of sales rank information for the item, by category. | [optional]
 **buy_box_eligible_offers** | [**\MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPOfferCountType[]**](PrPOfferCountType.md) |  | [optional]
-**offers_available_time** | [**\DateTime**](\DateTime.md) | When the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing. | [optional]
+**offers_available_time** | **\DateTime** | When the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

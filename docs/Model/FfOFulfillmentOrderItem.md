@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **order_item_disposition** | **string** | Indicates whether the item is sellable or unsellable. | [optional]
 **cancelled_quantity** | **int** | The item quantity. |
 **unfulfillable_quantity** | **int** | The item quantity. |
-**estimated_ship_date** | [**\DateTime**](\DateTime.md) |  | [optional]
-**estimated_arrival_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**estimated_ship_date** | **\DateTime** |  | [optional]
+**estimated_arrival_date** | **\DateTime** |  | [optional]
 **per_unit_price** | [**\MPSolutions\AmznSellingPartnerApi\Models\FulfillmentOutbound\FfOMoney**](FfOMoney.md) |  | [optional]
 **per_unit_tax** | [**\MPSolutions\AmznSellingPartnerApi\Models\FulfillmentOutbound\FfOMoney**](FfOMoney.md) |  | [optional]
 **per_unit_declared_value** | [**\MPSolutions\AmznSellingPartnerApi\Models\FulfillmentOutbound\FfOMoney**](FfOMoney.md) |  | [optional]

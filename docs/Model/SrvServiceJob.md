@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**create_time** | [**\DateTime**](\DateTime.md) | The date and time of the creation of the job, in ISO 8601 format. | [optional]
+**create_time** | **\DateTime** | The date and time of the creation of the job, in ISO 8601 format. | [optional]
 **service_job_id** | **string** | Amazon identifier for the service job. | [optional]
 **service_job_status** | **string** | The status of the service job. | [optional]
 **scope_of_work** | [**\MPSolutions\AmznSellingPartnerApi\Models\Services\SrvScopeOfWork**](SrvScopeOfWork.md) |  | [optional]

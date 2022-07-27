@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **order_fee_list** | [**\MPSolutions\AmznSellingPartnerApi\Models\Finances\FnnFeeComponent[]**](FnnFeeComponent.md) | A list of fee component information. | [optional]
 **order_fee_adjustment_list** | [**\MPSolutions\AmznSellingPartnerApi\Models\Finances\FnnFeeComponent[]**](FnnFeeComponent.md) | A list of fee component information. | [optional]
 **direct_payment_list** | [**\MPSolutions\AmznSellingPartnerApi\Models\Finances\FnnDirectPayment[]**](FnnDirectPayment.md) | A list of direct payment information. | [optional]
-**posted_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**posted_date** | **\DateTime** |  | [optional]
 **shipment_item_list** | [**\MPSolutions\AmznSellingPartnerApi\Models\Finances\FnnShipmentItem[]**](FnnShipmentItem.md) | A list of shipment items. | [optional]
 **shipment_item_adjustment_list** | [**\MPSolutions\AmznSellingPartnerApi\Models\Finances\FnnShipmentItem[]**](FnnShipmentItem.md) | A list of shipment items. | [optional]
 

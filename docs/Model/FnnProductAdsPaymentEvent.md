@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**posted_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**posted_date** | **\DateTime** |  | [optional]
 **transaction_type** | **string** | Indicates if the transaction is for a charge or a refund.  Possible values:  * charge - Charge  * refund - Refund | [optional]
 **invoice_id** | **string** | Identifier for the invoice that the transaction appears in. | [optional]
 **base_value** | [**\MPSolutions\AmznSellingPartnerApi\Models\Finances\FnnCurrency**](FnnCurrency.md) |  | [optional]

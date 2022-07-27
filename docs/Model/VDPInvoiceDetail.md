@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **invoice_number** | **string** | The unique invoice number. |
-**invoice_date** | [**\DateTime**](\DateTime.md) | Invoice date. |
+**invoice_date** | **\DateTime** | Invoice date. |
 **reference_number** | **string** | An additional unique reference number used for regulatory or other purposes. | [optional]
 **remit_to_party** | [**\MPSolutions\AmznSellingPartnerApi\Models\VendorDirectFulfillmentPayments\VDPPartyIdentification**](VDPPartyIdentification.md) |  |
 **ship_from_party** | [**\MPSolutions\AmznSellingPartnerApi\Models\VendorDirectFulfillmentPayments\VDPPartyIdentification**](VDPPartyIdentification.md) |  |

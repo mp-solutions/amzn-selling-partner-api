@@ -6,7 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getCompetitivePricing()**](PrPProductPricingApi.md#getCompetitivePricing) | **GET** /products/pricing/v0/competitivePrice | 
 [**getItemOffers()**](PrPProductPricingApi.md#getItemOffers) | **GET** /products/pricing/v0/items/{Asin}/offers | 
+[**getItemOffersBatch()**](PrPProductPricingApi.md#getItemOffersBatch) | **POST** /batches/products/pricing/v0/itemOffers | 
 [**getListingOffers()**](PrPProductPricingApi.md#getListingOffers) | **GET** /products/pricing/v0/listings/{SellerSKU}/offers | 
+[**getListingOffersBatch()**](PrPProductPricingApi.md#getListingOffersBatch) | **POST** /batches/products/pricing/v0/listingOffers | 
 [**getPricing()**](PrPProductPricingApi.md#getPricing) | **GET** /products/pricing/v0/price | 
 
 
@@ -18,7 +20,7 @@ getCompetitivePricing($marketplace_id, $item_type, $asins, $skus, $customer_type
 
 
 
-Returns competitive pricing information for a seller's offer listings based on seller SKU or ASIN.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns competitive pricing information for a seller's offer listings based on seller SKU or ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -82,7 +84,7 @@ getItemOffers($marketplace_id, $item_condition, $asin, $customer_type): \MPSolut
 
 
 
-Returns the lowest priced offers for a single item based on ASIN.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns the lowest priced offers for a single item based on ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -136,6 +138,62 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getItemOffersBatch()`
+
+```php
+getItemOffersBatch($get_item_offers_batch_request_body): \MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPGetItemOffersBatchResponse
+```
+
+
+
+Returns the lowest priced offers for a batch of items based on ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | .5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new MPSolutions\AmznSellingPartnerApi\Api\PrPProductPricingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$get_item_offers_batch_request_body = new \MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPGetItemOffersBatchRequest(); // \MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPGetItemOffersBatchRequest
+
+try {
+    $result = $apiInstance->getItemOffersBatch($get_item_offers_batch_request_body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PrPProductPricingApi->getItemOffersBatch: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **get_item_offers_batch_request_body** | [**\MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPGetItemOffersBatchRequest**](../Model/PrPGetItemOffersBatchRequest.md)|  |
+
+### Return type
+
+[**\MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPGetItemOffersBatchResponse**](../Model/PrPGetItemOffersBatchResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getListingOffers()`
 
 ```php
@@ -144,7 +202,7 @@ getListingOffers($marketplace_id, $item_condition, $seller_sku, $customer_type):
 
 
 
-Returns the lowest priced offers for a single SKU listing.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns the lowest priced offers for a single SKU listing.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -198,6 +256,62 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getListingOffersBatch()`
+
+```php
+getListingOffersBatch($get_listing_offers_batch_request_body): \MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPGetListingOffersBatchResponse
+```
+
+
+
+Returns the lowest priced offers for a batch of listings by SKU.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | .5 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new MPSolutions\AmznSellingPartnerApi\Api\PrPProductPricingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$get_listing_offers_batch_request_body = new \MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPGetListingOffersBatchRequest(); // \MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPGetListingOffersBatchRequest
+
+try {
+    $result = $apiInstance->getListingOffersBatch($get_listing_offers_batch_request_body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PrPProductPricingApi->getListingOffersBatch: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **get_listing_offers_batch_request_body** | [**\MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPGetListingOffersBatchRequest**](../Model/PrPGetListingOffersBatchRequest.md)|  |
+
+### Return type
+
+[**\MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPGetListingOffersBatchResponse**](../Model/PrPGetListingOffersBatchResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getPricing()`
 
 ```php
@@ -206,7 +320,7 @@ getPricing($marketplace_id, $item_type, $asins, $skus, $item_condition, $offer_t
 
 
 
-Returns pricing information for a seller's offer listings based on seller SKU or ASIN.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 10 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns pricing information for a seller's offer listings based on seller SKU or ASIN.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 20 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 

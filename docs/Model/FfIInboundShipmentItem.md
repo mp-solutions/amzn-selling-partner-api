@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **quantity_shipped** | **int** | The item quantity. |
 **quantity_received** | **int** | The item quantity. | [optional]
 **quantity_in_case** | **int** | The item quantity. | [optional]
-**release_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**release_date** | **\DateTime** |  | [optional]
 **prep_details_list** | [**\MPSolutions\AmznSellingPartnerApi\Models\FulfillmentInbound\FfIPrepDetails[]**](FfIPrepDetails.md) | A list of preparation instructions and who is responsible for that preparation. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

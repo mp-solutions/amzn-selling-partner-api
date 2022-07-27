@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**posted_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**posted_date** | **\DateTime** |  | [optional]
 **enrollment_id** | **string** | An enrollment identifier. | [optional]
 **parent_asin** | **string** | The Amazon Standard Identification Number (ASIN) of the item that was enrolled in the Early Reviewer Program. | [optional]
 **fee_component** | [**\MPSolutions\AmznSellingPartnerApi\Models\Finances\FnnFeeComponent**](FnnFeeComponent.md) |  | [optional]

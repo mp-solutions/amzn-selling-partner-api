@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**seller_id** | **string** | The seller identifier for the offer. | [optional]
 **my_offer** | **bool** | When true, this is the seller&#39;s offer. | [optional]
 **offer_type** | [**\MPSolutions\AmznSellingPartnerApi\Models\ProductPricing\PrPOfferCustomerType**](PrPOfferCustomerType.md) |  | [optional]
 **sub_condition** | **string** | The subcondition of the item. Subcondition values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other. |

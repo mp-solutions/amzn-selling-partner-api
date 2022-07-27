@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **list_price** | [**\MPSolutions\AmznSellingPartnerApi\Models\VendorOrders\VOrMoney**](VOrMoney.md) |  | [optional]
 **ordered_quantity** | [**\MPSolutions\AmznSellingPartnerApi\Models\VendorOrders\VOrOrderItemStatusOrderedQuantity**](VOrOrderItemStatusOrderedQuantity.md) |  | [optional]
 **acknowledgement_status** | [**\MPSolutions\AmznSellingPartnerApi\Models\VendorOrders\VOrOrderItemStatusAcknowledgementStatus**](VOrOrderItemStatusAcknowledgementStatus.md) |  | [optional]
+**receiving_status** | [**\MPSolutions\AmznSellingPartnerApi\Models\VendorOrders\VOrOrderItemStatusReceivingStatus**](VOrOrderItemStatusReceivingStatus.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

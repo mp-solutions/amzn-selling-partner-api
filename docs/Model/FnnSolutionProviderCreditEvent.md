@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **provider_id** | **string** | The Amazon-defined identifier of the solution provider. | [optional]
 **provider_store_name** | **string** | The store name where the payment event occurred. | [optional]
 **transaction_amount** | [**\MPSolutions\AmznSellingPartnerApi\Models\Finances\FnnCurrency**](FnnCurrency.md) |  | [optional]
-**transaction_creation_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**transaction_creation_date** | **\DateTime** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

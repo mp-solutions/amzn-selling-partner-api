@@ -37,5 +37,6 @@ Name | Type | Description | Notes
 **store_chain_store_id** | **string** | The store chain store identifier. Linked to a specific store in a store chain. | [optional]
 **deemed_reseller_category** | **string** | The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK. | [optional]
 **buyer_info** | [**\MPSolutions\AmznSellingPartnerApi\Models\Orders\OrdItemBuyerInfo**](OrdItemBuyerInfo.md) |  | [optional]
+**buyer_requested_cancel** | [**\MPSolutions\AmznSellingPartnerApi\Models\Orders\OrdBuyerRequestedCancel**](OrdBuyerRequestedCancel.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

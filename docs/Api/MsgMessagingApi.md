@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**createWarranty()**](MsgMessagingApi.md#createWarranty) | **POST** /messaging/v1/orders/{amazonOrderId}/messages/warranty | 
 [**getAttributes()**](MsgMessagingApi.md#getAttributes) | **GET** /messaging/v1/orders/{amazonOrderId}/attributes | 
 [**getMessagingActionsForOrder()**](MsgMessagingApi.md#getMessagingActionsForOrder) | **GET** /messaging/v1/orders/{amazonOrderId} | 
+[**sendInvoice()**](MsgMessagingApi.md#sendInvoice) | **POST** /messaging/v1/orders/{amazonOrderId}/messages/invoice | 
 
 
 ## `confirmCustomizationDetails()`
@@ -726,6 +727,66 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/hal+json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `sendInvoice()`
+
+```php
+sendInvoice($amazon_order_id, $marketplace_ids, $body): \MPSolutions\AmznSellingPartnerApi\Models\Messaging\MsgInvoiceResponse
+```
+
+
+
+Sends a message providing the buyer an invoice
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new MPSolutions\AmznSellingPartnerApi\Api\MsgMessagingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$amazon_order_id = 'amazon_order_id_example'; // string | An Amazon order identifier. This specifies the order for which a message is sent.
+$marketplace_ids = array('marketplace_ids_example'); // string[] | A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
+$body = new \MPSolutions\AmznSellingPartnerApi\Models\Messaging\MsgInvoiceRequest(); // \MPSolutions\AmznSellingPartnerApi\Models\Messaging\MsgInvoiceRequest
+
+try {
+    $result = $apiInstance->sendInvoice($amazon_order_id, $marketplace_ids, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MsgMessagingApi->sendInvoice: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
+ **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\MPSolutions\AmznSellingPartnerApi\Models\Messaging\MsgInvoiceRequest**](../Model/MsgInvoiceRequest.md)|  |
+
+### Return type
+
+[**\MPSolutions\AmznSellingPartnerApi\Models\Messaging\MsgInvoiceResponse**](../Model/MsgInvoiceResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/hal+json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

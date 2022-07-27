@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **carrier_name** | **string** | The name of the carrier. |
 **shipping_service_id** | **string** | An Amazon-defined shipping service identifier. |
 **shipping_service_offer_id** | **string** | An Amazon-defined shipping service offer identifier. |
-**ship_date** | [**\DateTime**](\DateTime.md) |  |
-**earliest_estimated_delivery_date** | [**\DateTime**](\DateTime.md) |  | [optional]
-**latest_estimated_delivery_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**ship_date** | **\DateTime** |  |
+**earliest_estimated_delivery_date** | **\DateTime** |  | [optional]
+**latest_estimated_delivery_date** | **\DateTime** |  | [optional]
 **rate** | [**\MPSolutions\AmznSellingPartnerApi\Models\MerchantFulfillment\MFfCurrencyAmount**](MFfCurrencyAmount.md) |  |
 **shipping_service_options** | [**\MPSolutions\AmznSellingPartnerApi\Models\MerchantFulfillment\MFfShippingServiceOptions**](MFfShippingServiceOptions.md) |  |
 **available_shipping_service_options** | [**\MPSolutions\AmznSellingPartnerApi\Models\MerchantFulfillment\MFfAvailableShippingServiceOptions**](MFfAvailableShippingServiceOptions.md) |  | [optional]

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **seller_order_id** | **string** | An order identifier that is specified by the seller. | [optional]
-**transaction_posted_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**transaction_posted_date** | **\DateTime** |  | [optional]
 **business_object_type** | **string** | The type of business object. | [optional]
 **sales_channel** | **string** | The sales channel for the transaction. | [optional]
 **charge** | [**\MPSolutions\AmznSellingPartnerApi\Models\Finances\FnnChargeComponent**](FnnChargeComponent.md) |  | [optional]

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **shipment_id** | **string** | An Amazon-defined shipment identifier. |
-**amazon_order_id** | **string** | An Amazon-defined order identifier, in 3-7-7 format. &lt;br&gt;**Pattern** : &#x60;[0-9A-Z]{3}-[0-9]{7}-[0-9]{7}&#x60;. |
+**amazon_order_id** | **string** | An Amazon-defined order identifier, in 3-7-7 format. |
 **seller_order_id** | **string** | A seller-defined order identifier. | [optional]
 **item_list** | [**\MPSolutions\AmznSellingPartnerApi\Models\MerchantFulfillment\MFfItem[]**](MFfItem.md) | The list of items to be included in a shipment. |
 **ship_from_address** | [**\MPSolutions\AmznSellingPartnerApi\Models\MerchantFulfillment\MFfAddress**](MFfAddress.md) |  |
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **label** | [**\MPSolutions\AmznSellingPartnerApi\Models\MerchantFulfillment\MFfLabel**](MFfLabel.md) |  |
 **status** | [**\MPSolutions\AmznSellingPartnerApi\Models\MerchantFulfillment\MFfShipmentStatus**](MFfShipmentStatus.md) |  |
 **tracking_id** | **string** | The shipment tracking identifier provided by the carrier. | [optional]
-**created_date** | [**\DateTime**](\DateTime.md) |  |
-**last_updated_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**created_date** | **\DateTime** |  |
+**last_updated_date** | **\DateTime** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

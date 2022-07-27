@@ -26,5 +26,10 @@ Name | Type | Description | Notes
 **network_commingling_transaction_event_list** | [**\MPSolutions\AmznSellingPartnerApi\Models\Finances\FnnNetworkComminglingTransactionEvent[]**](FnnNetworkComminglingTransactionEvent.md) | A list of network commingling transaction events. | [optional]
 **affordability_expense_event_list** | [**\MPSolutions\AmznSellingPartnerApi\Models\Finances\FnnAffordabilityExpenseEvent[]**](FnnAffordabilityExpenseEvent.md) | A list of expense information related to an affordability promotion. | [optional]
 **affordability_expense_reversal_event_list** | [**\MPSolutions\AmznSellingPartnerApi\Models\Finances\FnnAffordabilityExpenseEvent[]**](FnnAffordabilityExpenseEvent.md) | A list of expense information related to an affordability promotion. | [optional]
+**trial_shipment_event_list** | [**\MPSolutions\AmznSellingPartnerApi\Models\Finances\FnnTrialShipmentEvent[]**](FnnTrialShipmentEvent.md) | A list of information about trial shipment financial events. | [optional]
+**shipment_settle_event_list** | [**\MPSolutions\AmznSellingPartnerApi\Models\Finances\FnnShipmentEvent[]**](FnnShipmentEvent.md) | A list of information about shipment settle financial events. | [optional]
+**tax_withholding_event_list** | [**\MPSolutions\AmznSellingPartnerApi\Models\Finances\FnnTaxWithholdingEvent[]**](FnnTaxWithholdingEvent.md) | List of TaxWithholding events. | [optional]
+**removal_shipment_event_list** | [**\MPSolutions\AmznSellingPartnerApi\Models\Finances\FnnRemovalShipmentEvent[]**](FnnRemovalShipmentEvent.md) | A list of removal shipment event information. | [optional]
+**removal_shipment_adjustment_event_list** | [**\MPSolutions\AmznSellingPartnerApi\Models\Finances\FnnRemovalShipmentAdjustmentEvent[]**](FnnRemovalShipmentAdjustmentEvent.md) | A comma-delimited list of Removal shipmentAdjustment details for FBA inventory. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

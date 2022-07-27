@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **return_comment** | **string** | An optional comment about the return item. | [optional]
 **amazon_return_reason_code** | **string** | The return reason code that the Amazon fulfillment center assigned to the return item. | [optional]
 **status** | [**\MPSolutions\AmznSellingPartnerApi\Models\FulfillmentOutbound\FfOFulfillmentReturnItemStatus**](FfOFulfillmentReturnItemStatus.md) |  |
-**status_changed_date** | [**\DateTime**](\DateTime.md) |  |
+**status_changed_date** | **\DateTime** |  |
 **return_authorization_id** | **string** | Identifies the return authorization used to return this item. See ReturnAuthorization. | [optional]
 **return_received_condition** | [**\MPSolutions\AmznSellingPartnerApi\Models\FulfillmentOutbound\FfOReturnItemDisposition**](FfOReturnItemDisposition.md) |  | [optional]
 **fulfillment_center_id** | **string** | The identifier for the Amazon fulfillment center that processed the return item. | [optional]
