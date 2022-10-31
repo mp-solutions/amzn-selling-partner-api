@@ -61,7 +61,7 @@ class FfISellerFreightClass
     public const _100 = '100';
     public const _100_0 = '100.0'; // non-exist on documentation
     public const _110 = '110';
-    public const _110_0 = '10.0'; // non-exist on documentation
+    public const _110_0 = '110.0'; // non-exist on documentation
     public const _125 = '125';
     public const _125_0 = '125.0'; // non-exist on documentation
     public const _150 = '150';
@@ -78,7 +78,7 @@ class FfISellerFreightClass
     public const _400_0 = '400.0'; // non-exist on documentation
     public const _500 = '500';
     public const _500_0 = '500.0'; // non-exist on documentation
-    
+
 	/**
      * Gets allowable values of the enum
      * @return string[]
@@ -123,5 +123,3 @@ class FfISellerFreightClass
         ];
     }
 }
-
-
