@@ -46,6 +46,7 @@ class FfICurrencyCode
      */
     public const USD = 'USD';
     public const GBP = 'GBP';
+    public const CAD = 'CAD';
     
 	/**
      * Gets allowable values of the enum
@@ -55,7 +56,8 @@ class FfICurrencyCode
     {
         return [
             self::USD,
-            self::GBP
+            self::GBPб
+            self::CAD
         ];
     }
 }
