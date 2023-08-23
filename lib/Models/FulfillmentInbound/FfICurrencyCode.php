@@ -56,7 +56,7 @@ class FfICurrencyCode
     {
         return [
             self::USD,
-            self::GBPб
+            self::GBP,
             self::CAD
         ];
     }
