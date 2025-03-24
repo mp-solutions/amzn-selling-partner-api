@@ -4,6 +4,7 @@
     <include>
       <directory suffix=".php">./lib\/Api</directory>
       <directory suffix=".php">./lib\/Models/CatalogItems20220401</directory>
+      <directory suffix=".php">./lib\/Models/ListingsItems20210801</directory>
     </include>
   </coverage>
   <testsuites>
