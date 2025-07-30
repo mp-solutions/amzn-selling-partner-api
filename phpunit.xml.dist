@@ -6,6 +6,7 @@
       <directory suffix=".php">./lib\/Models/CatalogItems20220401</directory>
       <directory suffix=".php">./lib\/Models/ListingsItems20210801</directory>
       <directory suffix=".php">./lib\/Models/FulfillmentInbound20240320</directory>
+	  <directory suffix=".php">./lib\/Models/Awd20240509</directory>
     </include>
   </coverage>
   <testsuites>
