@@ -171,6 +171,7 @@ class Finances20240619ItemRelatedIdentifier implements ModelInterface, ArrayAcce
     public const ITEM_RELATED_IDENTIFIER_NAME_COUPON_ID = 'COUPON_ID';
     public const ITEM_RELATED_IDENTIFIER_NAME_REMOVAL_SHIPMENT_ITEM_ID = 'REMOVAL_SHIPMENT_ITEM_ID';
     public const ITEM_RELATED_IDENTIFIER_NAME_TRANSACTION_ID = 'TRANSACTION_ID';
+	public const ITEM_RELATED_IDENTIFIER_NAME_DEAL_ID = 'DEAL_ID';
 
     /**
      * Gets allowable values of the enum
@@ -184,6 +185,7 @@ class Finances20240619ItemRelatedIdentifier implements ModelInterface, ArrayAcce
             self::ITEM_RELATED_IDENTIFIER_NAME_COUPON_ID,
             self::ITEM_RELATED_IDENTIFIER_NAME_REMOVAL_SHIPMENT_ITEM_ID,
             self::ITEM_RELATED_IDENTIFIER_NAME_TRANSACTION_ID,
+			self::ITEM_RELATED_IDENTIFIER_NAME_DEAL_ID,
         ];
     }
 
