@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Finances20240619ItemRelatedIdentifier
  *
@@ -47,29 +48,29 @@ class Finances20240619ItemRelatedIdentifier implements ModelInterface, ArrayAcce
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'ItemRelatedIdentifier';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'item_related_identifier_name' => 'string',
         'item_related_identifier_value' => 'string'
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'item_related_identifier_name' => null,
         'item_related_identifier_value' => null
@@ -171,7 +172,8 @@ class Finances20240619ItemRelatedIdentifier implements ModelInterface, ArrayAcce
     public const ITEM_RELATED_IDENTIFIER_NAME_COUPON_ID = 'COUPON_ID';
     public const ITEM_RELATED_IDENTIFIER_NAME_REMOVAL_SHIPMENT_ITEM_ID = 'REMOVAL_SHIPMENT_ITEM_ID';
     public const ITEM_RELATED_IDENTIFIER_NAME_TRANSACTION_ID = 'TRANSACTION_ID';
-	public const ITEM_RELATED_IDENTIFIER_NAME_DEAL_ID = 'DEAL_ID';
+    public const ITEM_RELATED_IDENTIFIER_NAME_DEAL_ID = 'DEAL_ID';
+    public const ITEM_RELATED_IDENTIFIER_NAME_INVOICE_ID = 'INVOICE_ID';
 
     /**
      * Gets allowable values of the enum
@@ -185,7 +187,8 @@ class Finances20240619ItemRelatedIdentifier implements ModelInterface, ArrayAcce
             self::ITEM_RELATED_IDENTIFIER_NAME_COUPON_ID,
             self::ITEM_RELATED_IDENTIFIER_NAME_REMOVAL_SHIPMENT_ITEM_ID,
             self::ITEM_RELATED_IDENTIFIER_NAME_TRANSACTION_ID,
-			self::ITEM_RELATED_IDENTIFIER_NAME_DEAL_ID,
+            self::ITEM_RELATED_IDENTIFIER_NAME_DEAL_ID,
+            self::ITEM_RELATED_IDENTIFIER_NAME_INVOICE_ID,
         ];
     }
 
@@ -362,7 +365,7 @@ class Finances20240619ItemRelatedIdentifier implements ModelInterface, ArrayAcce
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -388,5 +391,3 @@ class Finances20240619ItemRelatedIdentifier implements ModelInterface, ArrayAcce
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-
